@@ -1,1 +1,257 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TD SYNNEX – Nástroje a aplikace</title>
+<meta name="description" content="Rozcestník nástrojů a aplikací TD SYNNEX CZ pro partnery a obchodní tým.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --darkTeal:#0D4D4D;
+  --teal-deep:#082f2f;
+  --accent:#1DB87E;
+  --accent-soft:#1db87e22;
+  --ink:#14201f;
+  --muted:#5d6e6c;
+  --card:#ffffff;
+  --bg:#f4f6f5;
+  --line:#e2e8e6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
 
+/* ---------- Header ---------- */
+.hero{
+  background:linear-gradient(150deg,var(--darkTeal) 0%,var(--teal-deep) 100%);
+  color:#fff;
+  padding:64px 24px 84px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  right:-120px;top:-120px;
+  width:420px;height:420px;
+  background:radial-gradient(circle,var(--accent) 0%,transparent 70%);
+  opacity:.18;
+  pointer-events:none;
+}
+.hero-inner{max-width:1080px;margin:0 auto;position:relative;z-index:1}
+.brand{
+  display:inline-flex;align-items:center;gap:12px;
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700;letter-spacing:.04em;font-size:1.05rem;
+  text-transform:uppercase;
+}
+.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.hero h1{
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700;
+  font-size:clamp(2rem,5vw,3.2rem);
+  line-height:1.08;
+  margin:28px 0 16px;
+  max-width:18ch;
+}
+.hero p{
+  font-size:1.1rem;
+  color:#cfe3df;
+  max-width:54ch;
+}
+
+/* ---------- Grid ---------- */
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(290px,1fr));
+  gap:20px;
+  margin-top:-44px;
+  position:relative;z-index:2;
+  padding-bottom:8px;
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:16px;
+  padding:26px 24px 22px;
+  text-decoration:none;
+  color:inherit;
+  display:flex;flex-direction:column;
+  position:relative;
+  overflow:hidden;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+  box-shadow:0 1px 3px rgba(13,77,77,.06);
+}
+.card::before{
+  content:"";
+  position:absolute;left:0;top:0;height:4px;width:100%;
+  background:linear-gradient(90deg,var(--darkTeal),var(--accent));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .25s ease;
+}
+.card:hover,.card:focus-visible{
+  transform:translateY(-4px);
+  box-shadow:0 14px 34px rgba(13,77,77,.14);
+  border-color:var(--accent);
+  outline:none;
+}
+.card:hover::before,.card:focus-visible::before{transform:scaleX(1)}
+.card-icon{
+  width:48px;height:48px;border-radius:12px;
+  background:var(--accent-soft);
+  color:var(--darkTeal);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:18px;
+}
+.card-icon svg{width:24px;height:24px}
+.card h2{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.22rem;font-weight:600;
+  margin-bottom:8px;
+}
+.card p{color:var(--muted);font-size:.94rem;flex:1}
+.card-go{
+  margin-top:18px;
+  display:inline-flex;align-items:center;gap:7px;
+  font-weight:600;font-size:.9rem;
+  color:var(--darkTeal);
+}
+.card-go svg{transition:transform .2s ease;width:16px;height:16px}
+.card:hover .card-go svg,.card:focus-visible .card-go svg{transform:translateX(5px)}
+
+/* ---------- Contact ---------- */
+.contact{
+  margin:64px 0 0;
+  background:var(--darkTeal);
+  color:#fff;
+  border-radius:18px;
+  padding:40px 32px;
+  display:flex;flex-wrap:wrap;
+  gap:28px 56px;align-items:center;justify-content:space-between;
+}
+.contact h3{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.4rem;margin-bottom:6px;
+}
+.contact p{color:#cfe3df;font-size:.98rem}
+.contact-links{display:flex;flex-wrap:wrap;gap:14px}
+.contact-links a{
+  color:#fff;text-decoration:none;
+  background:rgba(255,255,255,.1);
+  border:1px solid rgba(255,255,255,.18);
+  padding:11px 18px;border-radius:10px;
+  font-size:.92rem;font-weight:500;
+  transition:background .18s ease;
+  display:inline-flex;align-items:center;gap:8px;
+}
+.contact-links a:hover,.contact-links a:focus-visible{background:var(--accent);border-color:var(--accent);outline:none}
+
+footer{
+  text-align:center;
+  padding:40px 24px 48px;
+  color:var(--muted);
+  font-size:.85rem;
+}
+
+@media (max-width:560px){
+  .hero{padding:48px 20px 72px}
+  .contact{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <span class="brand"><span class="dot"></span>TD SYNNEX&nbsp;CZ</span>
+    <h1>Nástroje a aplikace</h1>
+    <p>Rozcestník interních a partnerských nástrojů. Vyber si aplikaci a otevři ji jedním kliknutím.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="grid" id="grid" aria-label="Seznam nástrojů"></section>
+
+  <section class="contact">
+    <div>
+      <h3>Potřebuješ pomoct?</h3>
+      <p>Ozvi se obchodnímu týmu Cloud &amp; AI / Software &amp; Cloud.</p>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:cloud@tdsynnex.cz">E-mail</a>
+      <a href="https://tdsynnexcz.github.io/kontakty/">Kontakty</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  © <span id="year"></span> TD SYNNEX Czech Republic
+</footer>
+
+<script>
+/* ============================================================
+   PŘIDÁNÍ NOVÉHO NÁSTROJE = dopsání jednoho bloku do pole níže.
+   icon: vyber jeden z klíčů z objektu ICONS (níže), nebo "default".
+   ============================================================ */
+const TOOLS = [
+  {
+    name: "Tenant Check",
+    desc: "Ověření Microsoft 365 tenanta a domény partnera.",
+    url:  "https://tdsynnexcz.github.io/tenantcheck/",
+    icon: "shield"
+  },
+  {
+    name: "NCE Kalkulátor",
+    desc: "Výpočet cen a marží Microsoft NCE licencí.",
+    url:  "https://tdsynnexcz.github.io/nce-kalkulator/",
+    icon: "calc"
+  },
+  {
+    name: "Kontakty",
+    desc: "Kontaktní údaje obchodního týmu TD SYNNEX CZ.",
+    url:  "https://tdsynnexcz.github.io/kontakty/",
+    icon: "contact"
+  }
+];
+
+/* ---- Sada ikon (SVG). Přidej si vlastní podle potřeby. ---- */
+const ICONS = {
+  shield:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>',
+  calc:    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="11" x2="8" y2="11"/><line x1="12" y1="11" x2="12" y2="11"/><line x1="16" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="8" y2="15"/><line x1="12" y1="15" x2="12" y2="15"/><line x1="16" y1="15" x2="16" y2="18"/><line x1="8" y1="18" x2="12" y2="18"/></svg>',
+  contact: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+  doc:     '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>',
+  cloud:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.6 1.5A4 4 0 0 0 6 19z"/></svg>',
+  chart:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
+  default: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg>'
+};
+
+const ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+
+const grid = document.getElementById('grid');
+grid.innerHTML = TOOLS.map(t => `
+  <a class="card" href="${t.url}">
+    <div class="card-icon">${ICONS[t.icon] || ICONS.default}</div>
+    <h2>${t.name}</h2>
+    <p>${t.desc}</p>
+    <span class="card-go">Otevřít ${ARROW}</span>
+  </a>
+`).join('');
+
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
