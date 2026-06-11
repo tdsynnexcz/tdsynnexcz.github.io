@@ -129,6 +129,54 @@ body{
 .card-go svg{transition:transform .2s ease;width:16px;height:16px}
 .card:hover .card-go svg,.card:focus-visible .card-go svg{transform:translateX(5px)}
 
+/* ---------- Blog banner ---------- */
+.blog{
+  margin-top:40px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  background:linear-gradient(135deg,#fff 0%,#f0faf6 100%);
+  padding:30px 32px;
+  display:flex;flex-wrap:wrap;align-items:center;gap:22px 32px;
+  position:relative;overflow:hidden;
+  text-decoration:none;color:inherit;
+  transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
+}
+.blog::before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:5px;
+  background:linear-gradient(180deg,var(--darkTeal),var(--accent));
+}
+.blog:hover,.blog:focus-visible{
+  transform:translateY(-3px);
+  box-shadow:0 14px 34px rgba(13,77,77,.12);
+  border-color:var(--accent);outline:none;
+}
+.blog-icon{
+  width:56px;height:56px;border-radius:14px;flex:0 0 auto;
+  background:var(--darkTeal);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+}
+.blog-icon svg{width:28px;height:28px}
+.blog-text{flex:1;min-width:220px}
+.blog-text .eyebrow{
+  font-family:'Space Grotesk',sans-serif;
+  text-transform:uppercase;letter-spacing:.08em;
+  font-size:.72rem;font-weight:600;color:var(--accent);
+  margin-bottom:5px;
+}
+.blog-text h3{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.3rem;font-weight:600;margin-bottom:5px;
+}
+.blog-text p{color:var(--muted);font-size:.95rem}
+.blog-cta{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent);color:#fff;
+  padding:13px 22px;border-radius:10px;
+  font-weight:600;font-size:.95rem;white-space:nowrap;
+}
+.blog-cta svg{width:17px;height:17px;transition:transform .2s ease}
+.blog:hover .blog-cta svg,.blog:focus-visible .blog-cta svg{transform:translateX(5px)}
+
 /* ---------- Contact ---------- */
 .contact{
   margin:64px 0 0;
@@ -185,10 +233,27 @@ footer{
 <main class="wrap">
   <section class="grid" id="grid" aria-label="Seznam nástrojů"></section>
 
+  <a class="blog" href="https://hub.tdsynnex.com/cz/as-blog/">
+    <div class="blog-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 22V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v18l-3-2-3 2-3-2-3 2-2-1.5"/>
+        <line x1="8" y1="7" x2="16" y2="7"/><line x1="8" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="13" y2="15"/>
+      </svg>
+    </div>
+    <div class="blog-text">
+      <div class="eyebrow">Blog TD SYNNEX</div>
+      <h3>Sledujte náš blog</h3>
+      <p>Novinky, důležité informace a tipy z oblasti cloudu, licencí a partnerských programů.</p>
+    </div>
+    <span class="blog-cta">Číst blog
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </span>
+  </a>
+
   <section class="contact">
     <div>
       <h3>Potřebuješ pomoct?</h3>
-      <p>Ozvi se obchodnímu týmu &amp; AI / Software &amp; Cloud.</p>
+      <p>Ozvi se obchodnímu týmu Cloud &amp; AI / Software &amp; Cloud.</p>
     </div>
     <div class="contact-links">
       <a href="mailto:microsoft.cz@tdsynnex.com">E-mail</a>
@@ -209,7 +274,7 @@ footer{
 const TOOLS = [
   {
     name: "Tenant Check",
-    desc: "Způsob, jak zjistit tenant ID jednoduše podle domény a také to, zda k dané doméně je vázán nějaký tenant.",
+    desc: "Způsob, jak jednoduše zjistit tenant ID podle domény a také to, zda je k dané doméně vázán nějaký tenant.",
     url:  "https://tdsynnexcz.github.io/tenantcheck/",
     icon: "shield"
   },
@@ -221,7 +286,7 @@ const TOOLS = [
   },
   {
     name: "Kontakty",
-    desc: "Kontaktní údaje Microsoft & Adobe týmu TD SYNNEX CZ.",
+    desc: "Kontaktní údaje Microsoft &amp; Adobe týmu TD SYNNEX.",
     url:  "https://tdsynnexcz.github.io/kontakty/",
     icon: "contact"
   }
