@@ -48,6 +48,11 @@ body{
   pointer-events:none;
 }
 .hero-inner{max-width:1080px;margin:0 auto;position:relative;z-index:1}
+.hero-toprow{
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+  margin-bottom:28px;
+}
 .brand{
   display:inline-flex;align-items:center;gap:12px;
   font-family:'Space Grotesk',sans-serif;
@@ -223,6 +228,40 @@ footer{
   .hero{padding:48px 20px 72px}
   .contact{flex-direction:column;align-items:flex-start}
 }
+/* ---------- Portals strip (topbar) ---------- */
+.portals{
+  display:flex;flex-wrap:wrap;align-items:center;gap:6px;
+}
+.portals-label{
+  font-size:.7rem;font-weight:600;letter-spacing:.08em;
+  text-transform:uppercase;color:rgba(255,255,255,.45);
+  white-space:nowrap;margin-right:6px;
+}
+.portal-link{
+  display:inline-flex;align-items:center;gap:5px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:999px;
+  padding:4px 12px;
+  font-size:.78rem;font-weight:600;color:#fff;
+  text-decoration:none;
+  transition:background .15s,border-color .15s;
+  white-space:nowrap;
+}
+.portal-link:hover,.portal-link:focus-visible{
+  background:var(--accent);
+  border-color:var(--accent);
+  outline:none;
+}
+.portal-link svg{width:11px;height:11px;opacity:.65}
+.portal-divider{
+  width:1px;height:14px;background:rgba(255,255,255,.18);
+  flex-shrink:0;margin:0 2px;
+}
+
+@media (max-width:560px){
+  .contact{flex-direction:column;align-items:flex-start}
+}
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;scroll-behavior:auto}
 }
@@ -232,7 +271,25 @@ footer{
 
 <header class="hero">
   <div class="hero-inner">
-    <span class="brand"><span class="dot"></span>TD SYNNEX&nbsp;CZ</span>
+    <div class="hero-toprow">
+      <span class="brand"><span class="dot"></span>TD SYNNEX&nbsp;CZ</span>
+      <div class="portals">
+        <span class="portals-label">Rychlý přístup</span>
+        <a class="portal-link" href="https://ion.tdsynnex.com/" target="_blank" rel="noopener">
+          StreamOne ION
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <div class="portal-divider"></div>
+        <a class="portal-link" href="https://cz.tdsynnex.com/" target="_blank" rel="noopener">
+          Intouch CZ
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+        <a class="portal-link" href="https://sk.tdsynnex.com/" target="_blank" rel="noopener">
+          Intouch SK
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
     <h1>Nástroje a aplikace</h1>
     <p>Rozcestník interních a partnerských nástrojů. Vyber si aplikaci a otevři ji jedním kliknutím.</p>
   </div>
