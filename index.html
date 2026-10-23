@@ -5,72 +5,74 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TD SYNNEX – Nástroje a aplikace</title>
 <meta name="description" content="Rozcestník nástrojů a aplikací TD SYNNEX CZ pro partnery a obchodní tým.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+/* Oficiální paleta TD SYNNEX - Brand Guidelines, May 2025 (str. 27-28) */
 :root{
-  --darkTeal:#0D4D4D;
-  --teal-deep:#082f2f;
-  --accent:#1DB87E;
-  --accent-soft:#1db87e22;
-  --ink:#14201f;
-  --muted:#5d6e6c;
-  --card:#ffffff;
-  --bg:#f4f6f5;
-  --line:#e2e8e6;
+  --tds-deep-teal:#003031;
+  --tds-teal:#005758;
+  --tds-green:#2D9F88;
+  --tds-aqua:#08BED5;
+  --tds-chartreuse:#CCD814;
+  --tds-white:#FFFFFF;
+  --tds-cloud-white:#FFFFF6;
+  --tds-light-grey:#F0F0F0;
+  --tds-cool-grey:#D9D8D7;
+  --ink:#003031;
+  --muted:#4A5556;
+  --tds-font:"TWK Everett",Arial,Helvetica,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{
-  font-family:'Inter',system-ui,sans-serif;
-  background:var(--bg);
+  font-family:var(--tds-font);
+  background:var(--tds-light-grey);
   color:var(--ink);
   line-height:1.55;
+  text-align:left;
   -webkit-font-smoothing:antialiased;
 }
 
 /* ---------- Header ---------- */
 .hero{
-  background:linear-gradient(150deg,var(--darkTeal) 0%,var(--teal-deep) 100%);
+  background:linear-gradient(135deg,var(--tds-deep-teal) 0%,var(--tds-teal) 100%);
   color:#fff;
-  padding:48px 24px 76px;
+  padding:40px 24px 80px;
   position:relative;
   overflow:hidden;
 }
 .hero::after{
   content:"";
   position:absolute;
-  right:-120px;top:-120px;
-  width:420px;height:420px;
-  background:radial-gradient(circle,var(--accent) 0%,transparent 70%);
-  opacity:.18;
+  right:-160px;top:-160px;
+  width:520px;height:520px;
+  border-radius:50%;
+  background:radial-gradient(circle,var(--tds-green) 0%,transparent 70%);
+  opacity:.28;
   pointer-events:none;
 }
-.hero-inner{max-width:1080px;margin:0 auto;position:relative;z-index:1}
+.hero-inner{max-width:1032px;margin:0 auto;position:relative;z-index:1}
 .hero-toprow{
   display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:12px;
-  margin-bottom:28px;
+  flex-wrap:wrap;gap:16px;
+  margin-bottom:36px;
 }
-.brand{
-  display:inline-flex;align-items:center;gap:12px;
-  font-family:'Space Grotesk',sans-serif;
-  font-weight:700;letter-spacing:.04em;font-size:1.05rem;
-  text-transform:uppercase;
-}
-.brand .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.brand{display:inline-flex;align-items:center}
+.brand img{display:block;width:200px;height:auto;min-width:100px}
 .hero h1{
-  font-family:'Space Grotesk',sans-serif;
   font-weight:700;
-  font-size:clamp(1.8rem,4.5vw,2.7rem);
-  line-height:1.08;
-  margin:22px 0 12px;
+  font-size:clamp(1.9rem,4.5vw,2.9rem);
+  line-height:1.1;
+  margin:8px 0 12px;
   max-width:18ch;
+  color:#fff;
+}
+.hero .eyebrow{
+  font-size:.75rem;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--tds-aqua);
 }
 .hero p{
   font-size:1.1rem;
-  color:#cfe3df;
+  color:#D7E6E4;
   max-width:54ch;
 }
 
@@ -80,14 +82,14 @@ body{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
   gap:16px;
-  margin-top:-44px;
+  margin-top:-48px;
   position:relative;z-index:2;
   padding-bottom:8px;
 }
 .card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:14px;
+  background:var(--tds-white);
+  border:1px solid var(--tds-cool-grey);
+  border-radius:12px;
   padding:20px 20px 18px;
   text-decoration:none;
   color:inherit;
@@ -95,59 +97,59 @@ body{
   position:relative;
   overflow:hidden;
   transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease;
-  box-shadow:0 1px 3px rgba(13,77,77,.06);
+  box-shadow:0 1px 3px rgba(0,48,49,.06);
 }
 .card::before{
   content:"";
   position:absolute;left:0;top:0;height:4px;width:100%;
-  background:linear-gradient(90deg,var(--darkTeal),var(--accent));
+  background:linear-gradient(90deg,var(--tds-teal),var(--tds-green));
   transform:scaleX(0);transform-origin:left;
   transition:transform .25s ease;
 }
 .card:hover,.card:focus-visible{
   transform:translateY(-4px);
-  box-shadow:0 14px 34px rgba(13,77,77,.14);
-  border-color:var(--accent);
+  box-shadow:0 14px 34px rgba(0,48,49,.14);
+  border-color:var(--tds-green);
   outline:none;
 }
 .card:hover::before,.card:focus-visible::before{transform:scaleX(1)}
 .card-icon{
-  width:40px;height:40px;border-radius:10px;
-  background:var(--accent-soft);
-  color:var(--darkTeal);
+  width:42px;height:42px;border-radius:50%;
+  background:var(--tds-deep-teal);
+  color:#fff;
   display:flex;align-items:center;justify-content:center;
-  margin-bottom:13px;
+  margin-bottom:14px;
 }
 .card-icon svg{width:20px;height:20px}
 .card h2{
-  font-family:'Space Grotesk',sans-serif;
-  font-size:1.08rem;font-weight:600;
+  font-size:1.08rem;font-weight:700;
+  color:var(--tds-teal);
   margin-bottom:6px;
 }
-.card p{color:var(--muted);font-size:.88rem;flex:1;line-height:1.45}
+.card p{color:var(--muted);font-size:.9rem;flex:1;line-height:1.45}
 .card-go{
   margin-top:14px;
   display:inline-flex;align-items:center;gap:7px;
-  font-weight:600;font-size:.85rem;
-  color:var(--darkTeal);
+  font-weight:700;font-size:.85rem;
+  color:var(--tds-teal);
 }
 .card-go svg{transition:transform .2s ease;width:16px;height:16px}
 .card:hover .card-go svg,.card:focus-visible .card-go svg{transform:translateX(5px)}
 .badge{
   position:absolute;top:12px;right:12px;
-  font-size:.65rem;font-weight:700;letter-spacing:.06em;
+  font-size:.62rem;font-weight:700;letter-spacing:.08em;
   text-transform:uppercase;
-  background:#fff3cd;color:#856404;
-  border:1px solid #ffc107;
+  background:var(--tds-light-grey);color:var(--tds-teal);
+  border:1px solid var(--tds-teal);
   border-radius:5px;padding:2px 7px;
 }
 
 /* ---------- Blog banner ---------- */
 .blog{
   margin-top:40px;
-  border:1px solid var(--line);
-  border-radius:16px;
-  background:linear-gradient(135deg,#fff 0%,#f0faf6 100%);
+  border:1px solid var(--tds-cool-grey);
+  border-radius:14px;
+  background:var(--tds-white);
   padding:30px 32px;
   display:flex;flex-wrap:wrap;align-items:center;gap:22px 32px;
   position:relative;overflow:hidden;
@@ -156,111 +158,99 @@ body{
 }
 .blog::before{
   content:"";position:absolute;left:0;top:0;bottom:0;width:5px;
-  background:linear-gradient(180deg,var(--darkTeal),var(--accent));
+  background:linear-gradient(180deg,var(--tds-deep-teal),var(--tds-green));
 }
 .blog:hover,.blog:focus-visible{
   transform:translateY(-3px);
-  box-shadow:0 14px 34px rgba(13,77,77,.12);
-  border-color:var(--accent);outline:none;
+  box-shadow:0 14px 34px rgba(0,48,49,.12);
+  border-color:var(--tds-green);outline:none;
 }
 .blog-icon{
-  width:56px;height:56px;border-radius:14px;flex:0 0 auto;
-  background:var(--darkTeal);color:#fff;
+  width:56px;height:56px;border-radius:50%;flex:0 0 auto;
+  background:var(--tds-deep-teal);color:#fff;
   display:flex;align-items:center;justify-content:center;
 }
-.blog-icon svg{width:28px;height:28px}
+.blog-icon svg{width:26px;height:26px}
 .blog-text{flex:1;min-width:220px}
 .blog-text .eyebrow{
-  font-family:'Space Grotesk',sans-serif;
-  text-transform:uppercase;letter-spacing:.08em;
-  font-size:.72rem;font-weight:600;color:var(--accent);
-  margin-bottom:5px;
+  text-transform:uppercase;letter-spacing:.18em;
+  font-size:.7rem;font-weight:700;color:var(--tds-green);
+  margin-bottom:6px;
 }
-.blog-text h3{
-  font-family:'Space Grotesk',sans-serif;
-  font-size:1.3rem;font-weight:600;margin-bottom:5px;
-}
+.blog-text h3{font-size:1.3rem;font-weight:700;color:var(--tds-teal);margin-bottom:5px}
 .blog-text p{color:var(--muted);font-size:.95rem}
 .blog-cta{
   display:inline-flex;align-items:center;gap:8px;
-  background:var(--accent);color:#fff;
-  padding:13px 22px;border-radius:10px;
-  font-weight:600;font-size:.95rem;white-space:nowrap;
+  background:var(--tds-teal);color:#fff;
+  padding:13px 22px;border-radius:8px;
+  font-weight:700;font-size:.95rem;white-space:nowrap;
 }
 .blog-cta svg{width:17px;height:17px;transition:transform .2s ease}
+.blog:hover .blog-cta{background:var(--tds-deep-teal)}
 .blog:hover .blog-cta svg,.blog:focus-visible .blog-cta svg{transform:translateX(5px)}
 
 /* ---------- Contact ---------- */
 .contact{
-  margin:64px 0 0;
-  background:var(--darkTeal);
+  margin:56px 0 0;
+  background:var(--tds-deep-teal);
   color:#fff;
-  border-radius:18px;
+  border-radius:16px;
   padding:40px 32px;
   display:flex;flex-wrap:wrap;
   gap:28px 56px;align-items:center;justify-content:space-between;
 }
-.contact h3{
-  font-family:'Space Grotesk',sans-serif;
-  font-size:1.4rem;margin-bottom:6px;
-}
-.contact p{color:#cfe3df;font-size:.98rem}
+.contact h3{font-size:1.4rem;margin-bottom:6px}
+.contact p{color:#D7E6E4;font-size:.98rem}
 .contact-links{display:flex;flex-wrap:wrap;gap:14px}
 .contact-links a{
   color:#fff;text-decoration:none;
-  background:rgba(255,255,255,.1);
-  border:1px solid rgba(255,255,255,.18);
-  padding:11px 18px;border-radius:10px;
-  font-size:.92rem;font-weight:500;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.25);
+  padding:11px 18px;border-radius:8px;
+  font-size:.92rem;font-weight:700;
   transition:background .18s ease;
   display:inline-flex;align-items:center;gap:8px;
 }
-.contact-links a:hover,.contact-links a:focus-visible{background:var(--accent);border-color:var(--accent);outline:none}
+.contact-links a:hover,.contact-links a:focus-visible{background:var(--tds-teal);border-color:var(--tds-aqua);outline:none}
 
 footer{
-  text-align:center;
-  padding:40px 24px 48px;
+  max-width:1080px;margin:0 auto;
+  text-align:left;
+  padding:32px 24px 48px;
   color:var(--muted);
   font-size:.85rem;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;
 }
+footer img{width:300px;height:auto;display:block}
 
-@media (max-width:560px){
-  .hero{padding:48px 20px 72px}
-  .contact{flex-direction:column;align-items:flex-start}
-}
 /* ---------- Portals strip (topbar) ---------- */
-.portals{
-  display:flex;flex-wrap:wrap;align-items:center;gap:6px;
-}
+.portals{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
 .portals-label{
-  font-size:.7rem;font-weight:600;letter-spacing:.08em;
-  text-transform:uppercase;color:rgba(255,255,255,.45);
+  font-size:.68rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:rgba(255,255,255,.6);
   white-space:nowrap;margin-right:6px;
 }
 .portal-link{
   display:inline-flex;align-items:center;gap:5px;
   background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.25);
   border-radius:999px;
   padding:4px 12px;
-  font-size:.78rem;font-weight:600;color:#fff;
+  font-size:.78rem;font-weight:700;color:#fff;
   text-decoration:none;
   transition:background .15s,border-color .15s;
   white-space:nowrap;
 }
-.portal-link:hover,.portal-link:focus-visible{
-  background:var(--accent);
-  border-color:var(--accent);
-  outline:none;
-}
-.portal-link svg{width:11px;height:11px;opacity:.65}
-.portal-divider{
-  width:1px;height:14px;background:rgba(255,255,255,.18);
-  flex-shrink:0;margin:0 2px;
-}
+.portal-link:hover,.portal-link:focus-visible{background:var(--tds-teal);border-color:var(--tds-aqua);outline:none}
+.portal-link svg{width:11px;height:11px;opacity:.7}
+.portal-divider{width:1px;height:14px;background:rgba(255,255,255,.25);flex-shrink:0;margin:0 2px}
 
 @media (max-width:560px){
-  .contact{flex-direction:column;align-items:flex-start}
+  .hero{padding:32px 16px 72px}
+  .wrap{padding:0 16px}
+  .contact{flex-direction:column;align-items:flex-start;padding:32px 22px}
+  .brand img{width:160px}
+  footer img{width:240px}
 }
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important;scroll-behavior:auto}
@@ -272,7 +262,7 @@ footer{
 <header class="hero">
   <div class="hero-inner">
     <div class="hero-toprow">
-      <span class="brand"><span class="dot"></span>TD SYNNEX&nbsp;CZ</span>
+      <a class="brand" href="https://tdsynnexcz.github.io/" aria-label="TD SYNNEX"><img src="assets/brand/logo-aqua-white.png" alt="TD SYNNEX" width="200"></a>
       <div class="portals">
         <span class="portals-label">Rychlý přístup</span>
         <a class="portal-link" href="https://ion.tdsynnex.com/" target="_blank" rel="noopener">
@@ -290,6 +280,7 @@ footer{
         </a>
       </div>
     </div>
+    <div class="eyebrow">Software Solutions</div>
     <h1>Nástroje a aplikace</h1>
     <p>Rozcestník interních a partnerských nástrojů. Vyber si aplikaci a otevři ji jedním kliknutím.</p>
   </div>
@@ -298,7 +289,7 @@ footer{
 <main class="wrap">
   <section class="grid" id="grid" aria-label="Seznam nástrojů"></section>
 
-  <a class="blog" href="https://hub.tdsynnex.com/cz/as-blog/">
+  <a class="blog" href="https://tdsynnexcz.github.io/blog/">
     <div class="blog-icon">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M4 22V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v18l-3-2-3 2-3-2-3 2-2-1.5"/>
@@ -328,7 +319,8 @@ footer{
 </main>
 
 <footer>
-  © <span id="year"></span> TD SYNNEX Czech Republic
+  <span>© <span id="year"></span> TD SYNNEX Czech Republic</span>
+  <img src="assets/brand/software-solutions-rgb.png" alt="TD SYNNEX | Software Solutions" width="300">
 </footer>
 
 <script>
@@ -344,20 +336,20 @@ const TOOLS = [
     icon: "shield"
   },
   {
-    name: "NCE Kalkulátor",
+    name: "NCE kalkulátor",
     desc: "Vypočítá cenu za upgrade licence, navýšení uživatele či koterminaci nového předplatného.",
     url:  "https://tdsynnexcz.github.io/nce-kalkulator/",
     icon: "calc"
   },
   {
-    name: "Copilot Cowork Kalkulačka",
+    name: "Kalkulačka Copilot Cowork",
     desc: "Orientační odhad měsíční spotřeby Copilot Credits pro Microsoft 365 Copilot Cowork.",
     url:  "https://tdsynnexcz.github.io/cowork/",
     icon: "cloud"
   },
   {
-    name: "Sentinel Kalkulačka",
-    desc: "Modeluje měsíční náklady na Microsoft Sentinel — analytická vrstva, Data Lake a retence.",
+    name: "Kalkulačka Sentinel",
+    desc: "Modeluje měsíční náklady na Microsoft Sentinel - analytická vrstva, Data Lake a retence.",
     url:  "https://tdsynnexcz.github.io/sentinelsec/",
     icon: "chart"
   },
